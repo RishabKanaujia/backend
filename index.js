@@ -1,6 +1,7 @@
 import { configDotenv } from "dotenv";
 import express from "express";
 import connectToMongoose from './config.js'
+import cors from 'cors'
 import user from "./model.js";
 configDotenv()
 const app = express()
@@ -8,6 +9,7 @@ const port = 8000
 
 await connectToMongoose()
 
+app.use(cors())
 app.use((req, res, next) => {
   // Set headers to allow requests from any origin
   res.header('Access-Control-Allow-Origin', '*');
