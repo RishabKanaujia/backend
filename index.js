@@ -1,6 +1,8 @@
+import { configDotenv } from "dotenv";
 import express from "express";
 import connectToMongoose from './config.js'
 import user from "./model.js";
+configDotenv()
 const app = express()
 const port = 8000
 
@@ -34,7 +36,6 @@ app.get('/user/:uid', async (req, res) => {
 
 
 app.post('/create', async (req, res) => {
-  console.log(req.body)
   const data = new user(req.body)
   const result = await data.save()
   res.send(result)
