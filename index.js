@@ -9,7 +9,6 @@ const port = 3000
 
 await connectToMongoose()
 
-app.use(cors())
 app.use((req, res, next) => {
   // Set headers to allow requests from any origin
   res.header('Access-Control-Allow-Origin', '*');
