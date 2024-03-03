@@ -5,7 +5,7 @@ import cors from 'cors'
 import user from "./model.js";
 configDotenv()
 const app = express()
-const port = 8000
+const port = 3000
 
 await connectToMongoose()
 
